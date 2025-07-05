@@ -25,8 +25,9 @@ const MovieSelector = () => {
     }
 
     return (
-        <div>
-            <div>
+        <>
+            <div className="select-container">
+                <h2>Movie Finder</h2>
                 <select value={selectionGenre} onChange={(e) => setGenre(e.target.value)}>
                     <option value="">--Select a Genre--</option>
                     <option value="Drama">Drama</option>
@@ -37,15 +38,15 @@ const MovieSelector = () => {
                 </select>
                 <button onClick={handleFilter}>Filter Movies</button>
             </div>
-            <div>
+            <div className="movies-container">
                 {filteredMovies.map((movie,index) => (
                     <div className="movie-card" key={index}>
                         <h2>{movie.title}</h2>
                         <h3>{movie.genre}</h3>
                     </div>
-                ))};
+                ))}
             </div>
-        </div>
+        </>
     )
 }
 
